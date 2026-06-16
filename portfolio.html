@@ -1,0 +1,1273 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio — Documentação Técnica & Base de Conhecimento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #0e0e0e;
+        --bg2: #161616;
+        --bg3: #1e1e1e;
+        --border: #2a2a2a;
+        --text: #e8e8e4;
+        --muted: #888880;
+        --accent: #00bb77;
+        --accent-dim: #00bb7629;
+        --accent-dim2: #00bb7618;
+        --font-display: "Space Grotesk", sans-serif;
+        --font-body: "Inter", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(14, 14, 14, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-logo {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 15px;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--muted);
+        transition: color 0.2s;
+        letter-spacing: 0.02em;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .nav-cta {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--accent) !important;
+        border: 1px solid rgba(62, 207, 178, 0.4);
+        padding: 7px 18px;
+        border-radius: 6px;
+        transition: background 0.2s !important;
+      }
+
+      .nav-cta:hover {
+        background: var(--accent-dim) !important;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 120px 40px 80px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .hero-eyebrow {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 28px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .hero-eyebrow::before {
+        content: "";
+        display: block;
+        width: 28px;
+        height: 1px;
+        background: var(--accent);
+      }
+
+      .hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(42px, 7vw, 80px);
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        margin-bottom: 32px;
+      }
+
+      .hero h1 em {
+        font-style: normal;
+        color: var(--accent);
+      }
+
+      .hero-sub {
+        font-size: 18px;
+        font-weight: 300;
+        color: var(--muted);
+        max-width: 560px;
+        line-height: 1.7;
+        margin-bottom: 48px;
+      }
+
+      .hero-sub strong {
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accent);
+        color: #0e0e0e;
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 600;
+        padding: 13px 28px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition:
+          opacity 0.2s,
+          transform 0.15s;
+        letter-spacing: 0.01em;
+      }
+
+      .btn-primary:hover {
+        opacity: 0.88;
+        transform: translateY(-1px);
+      }
+
+      .btn-secondary {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--muted);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.2s;
+      }
+
+      .btn-secondary:hover {
+        color: var(--text);
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 100px 40px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .section-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+      }
+
+      .section-desc {
+        font-size: 16px;
+        color: var(--muted);
+        max-width: 560px;
+        line-height: 1.7;
+        margin-bottom: 56px;
+      }
+
+      /* DIVIDER */
+      .divider {
+        width: 100%;
+        height: 1px;
+        background: var(--border);
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* WHAT I DO */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .service-card {
+        background: var(--bg2);
+        padding: 36px 32px;
+        transition: background 0.2s;
+      }
+
+      .service-card:hover {
+        background: var(--bg3);
+      }
+
+      .service-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--accent-dim);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      .service-name {
+        font-family: var(--font-display);
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: -0.01em;
+      }
+
+      .service-desc {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* PORTFOLIO */
+      .portfolio-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .portfolio-item {
+        background: var(--bg2);
+        padding: 28px 32px;
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        transition: background 0.2s;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .portfolio-item:hover {
+        background: var(--bg3);
+      }
+
+      .portfolio-item:hover .portfolio-arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .portfolio-type-badge {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: var(--accent-dim);
+        border: 1px solid rgba(62, 207, 178, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+      }
+
+      .portfolio-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .portfolio-meta {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 6px;
+      }
+
+      .portfolio-title {
+        font-family: var(--font-display);
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        letter-spacing: -0.01em;
+      }
+
+      .portfolio-desc {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .portfolio-tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+
+      .tag {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--muted);
+        background: var(--accent-dim2);
+        border: 1px solid var(--border);
+        padding: 3px 10px;
+        border-radius: 20px;
+        letter-spacing: 0.02em;
+      }
+
+      .portfolio-arrow {
+        flex-shrink: 0;
+        color: var(--accent);
+        font-size: 18px;
+        margin-top: 12px;
+        opacity: 0;
+        transform: translateX(-4px);
+        transition:
+          opacity 0.2s,
+          transform 0.2s;
+      }
+
+      /* DIFFERENTIALS */
+      .diff-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .diff-item {
+        display: flex;
+        gap: 24px;
+        padding: 28px 32px;
+        background: var(--bg2);
+        border-bottom: 1px solid var(--border);
+        align-items: flex-start;
+      }
+
+      .diff-item:last-child {
+        border-bottom: none;
+      }
+
+      .diff-num {
+        font-family: var(--font-display);
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--accent);
+        opacity: 0.5;
+        flex-shrink: 0;
+        width: 24px;
+        padding-top: 2px;
+      }
+
+      .diff-title {
+        font-family: var(--font-display);
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        letter-spacing: -0.01em;
+      }
+
+      .diff-text {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* CONTACT */
+      .contact-block {
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 56px 48px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-block::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(62, 207, 178, 0.08) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .contact-block h2 {
+        font-family: var(--font-display);
+        font-size: clamp(24px, 4vw, 38px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+      }
+
+      .contact-block p {
+        font-size: 16px;
+        color: var(--muted);
+        max-width: 460px;
+        margin: 0 auto 36px;
+        line-height: 1.7;
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        padding: 11px 22px;
+        border-radius: 8px;
+        transition:
+          color 0.2s,
+          border-color 0.2s,
+          background 0.2s;
+      }
+
+      .contact-link:hover {
+        color: var(--text);
+        border-color: rgba(62, 207, 178, 0.3);
+        background: var(--accent-dim);
+      }
+
+      .contact-link.primary {
+        background: var(--accent);
+        color: #0e0e0e;
+        border-color: var(--accent);
+        font-weight: 600;
+      }
+
+      .contact-link.primary:hover {
+        opacity: 0.88;
+        background: var(--accent);
+      }
+
+      /* FOOTER */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 32px 40px;
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      /* SCROLL REVEAL */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 640px) {
+        nav {
+          padding: 16px 20px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .hero,
+        section {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .hero {
+          padding-top: 100px;
+        }
+        .hero-stats {
+          gap: 28px;
+        }
+        .contact-block {
+          padding: 36px 24px;
+        }
+        footer {
+          padding: 24px 20px;
+        }
+        .portfolio-item {
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        .btn-primary {
+          transition: none;
+        }
+      }
+
+      /* PDF PREVIEW BUTTONS */
+      .pdf-previews {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+      }
+
+      .btn-pdf {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-dim);
+        border: 1px solid rgba(62, 207, 178, 0.25);
+        padding: 6px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          border-color 0.2s;
+        letter-spacing: 0.02em;
+        font-family: var(--font-body);
+      }
+
+      .btn-pdf:hover {
+        background: rgba(62, 207, 178, 0.2);
+        border-color: rgba(62, 207, 178, 0.45);
+      }
+
+      /* PDF MODAL */
+      .pdf-modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.82);
+        backdrop-filter: blur(6px);
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .pdf-modal-overlay.open {
+        display: flex;
+      }
+
+      .pdf-modal {
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        width: 100%;
+        max-width: 900px;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+      }
+
+      .pdf-modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+
+      .pdf-modal-title {
+        font-family: var(--font-display);
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: var(--text);
+      }
+
+      .pdf-modal-meta {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+
+      .pdf-modal-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn-modal-close {
+        background: none;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 18px;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+        line-height: 1;
+      }
+
+      .btn-modal-close:hover {
+        color: var(--text);
+        border-color: rgba(62, 207, 178, 0.3);
+      }
+
+      .pdf-modal-iframe {
+        flex: 1;
+        width: 100%;
+        border: none;
+        background: #fff;
+      }
+
+      .pdf-modal-loading {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .pdf-spinner {
+        width: 28px;
+        height: 28px;
+        border: 2px solid var(--border);
+        border-top-color: var(--accent);
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .pdf-modal {
+          height: 95vh;
+          border-radius: 12px;
+        }
+        .pdf-modal-header {
+          padding: 12px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo">JADE.V</div>
+      <ul class="nav-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#contato" class="nav-cta">Conversar →</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-eyebrow">
+        Documentação Técnica &amp; Base de Conhecimento</div>
+      <h1>
+        Seu suporte<br />deixa de <em>apagar<br />incêndio.</em>
+      </h1>
+      <p class="hero-sub">
+        Transformo conhecimento em
+        <strong>documentação que trabalha por você e sua equipe</strong> — base de ajuda,
+        vídeos tutoriais e materiais de onboarding que controlam o volume de suporte
+        e capacitam clientes com autonomia.
+      </p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary">Falar sobre →</a>
+        <a href="#portfolio" class="btn-secondary">Ver portfólio ↓</a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SERVICES -->
+    <section id="servicos">
+      <div class="reveal">
+        <div class="section-label">O que ofereço</div>
+        <h2 class="section-title">
+          Documentação que<br />sua equipe realmente usa
+        </h2>
+        <p class="section-desc">
+          Cada entrega é construída a partir de como o suporte realmente
+          funciona
+        </p>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <div class="service-icon">📚</div>
+          <div class="service-name">Base de Conhecimento</div>
+          <div class="service-desc">
+            Estruturo sua central de ajuda — organizada por fluxo de uso,
+            pesquisável e fácil de atualizar.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎬</div>
+          <div class="service-name">Vídeos Tutoriais</div>
+          <div class="service-desc">
+            Do roteiro à publicação. Gravo, narro e edito tutoriais do seu
+            sistema que funcionam como suporte assíncrono 24h — sem precisar
+            repetir explicações.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🗂️</div>
+          <div class="service-name">Material de Onboarding</div>
+          <div class="service-desc">
+            Apostilas interativas, guias e materiais de
+            treinamento para que novos clientes e colaboradores se localizem desde o primeiro contato.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚙️</div>
+          <div class="service-name">Processos Internos</div>
+          <div class="service-desc">
+            Mapeio e documento processos de atendimento, scripts de suporte e
+            fluxos operacionais para que o conhecimento não fique só no imaginário.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="reveal">
+        <div class="section-label">Portfólio</div>
+        <h2 class="section-title">Evidências reais,<br />não promessas</h2>
+        <p class="section-desc">
+          Todo material abaixo está em produção ativa — construído do zero para uma empresa de software de gestão com mais de 500 clientes.
+        </p>
+      </div>
+
+      <div class="portfolio-grid reveal">
+        <a
+          class="portfolio-item"
+          href="https://innosystem.gitbook.io/central-de-ajuda"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="portfolio-type-badge">📖</div>
+          <div class="portfolio-info">
+            <div class="portfolio-meta">Base de Conhecimento · GitBook</div>
+            <div class="portfolio-title">Central de Ajuda — Innosystem</div>
+            <div class="portfolio-desc">
+              Base de conhecimento completa cobrindo todos os módulos do
+              sistema. Usada diariamente por clientes e equipe de suporte.
+            </div>
+            <div class="portfolio-tags">
+              <span class="tag">GitBook</span>
+              <span class="tag">Estrutura de navegação</span>
+              <span class="tag">Suporte técnico</span>
+              <span class="tag">Cliente final</span>
+            </div>
+          </div>
+          <div class="portfolio-arrow">→</div>
+        </a>
+
+        <a
+          class="portfolio-item"
+          href="https://www.youtube.com/@innosystem_oficial/videos"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="portfolio-type-badge">🎬</div>
+          <div class="portfolio-info">
+            <div class="portfolio-meta">Canal YouTube · +100 vídeos</div>
+            <div class="portfolio-title">Vídeos Tutoriais — Innosystem</div>
+            <div class="portfolio-desc">
+              Canal com tutoriais do sistema produzidos do zero:
+              roteiro, narração, gravação de tela e edição.
+            </div>
+            <div class="portfolio-tags">
+              <span class="tag">Roteiro</span>
+              <span class="tag">Gravação de tela</span>
+              <span class="tag">Narração</span>
+              <span class="tag">Edição</span>
+            </div>
+          </div>
+          <div class="portfolio-arrow">→</div>
+        </a>
+
+        <a
+          class="portfolio-item"
+          href="https://youtube.com/playlist?list=PLadCUoAfGGNC_kJZ2BRprkLiHyV9LtIlR"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="portfolio-type-badge">▶️</div>
+          <div class="portfolio-info">
+            <div class="portfolio-meta">Playlist Destaque · Tour Completo</div>
+            <div class="portfolio-title">
+              Tour pelo Sistema — módulo a módulo
+            </div>
+            <div class="portfolio-desc">
+              Série estruturada que apresenta cada área do sistema em sequência
+              lógica — pensada para onboarding de novos clientes sem necessidade
+              de treinamento ao vivo.
+            </div>
+            <div class="portfolio-tags">
+              <span class="tag">Onboarding</span>
+              <span class="tag">Sequência pedagógica</span>
+              <span class="tag">Self-service</span>
+            </div>
+          </div>
+          <div class="portfolio-arrow">→</div>
+        </a>
+
+        <a
+          class="portfolio-item"
+          href="https://youtube.com/playlist?list=PLadCUoAfGGNC8ByxcDjB4sO_IJ6Ew1hrB"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="portfolio-type-badge">❓</div>
+          <div class="portfolio-info">
+            <div class="portfolio-meta">Playlist Destaque · Dúvidas Frequentes</div>
+            <div class="portfolio-title">
+              FAQ em Vídeo — dúvidas exaustivas
+            </div>
+            <div class="portfolio-desc">
+              Playlist com as dúvidas que mais aparecem no atendimento diário.
+              Cada vídeo responde uma pergunta específica de forma direta —
+              clientes descobrem e resolvem sozinhos.
+            </div>
+            <div class="portfolio-tags">
+              <span class="tag">Redução de chamados</span>
+              <span class="tag">Autoatendimento</span>
+              <span class="tag">Suporte escalável</span>
+            </div>
+          </div>
+          <div class="portfolio-arrow">→</div>
+        </a>
+
+        <div
+          class="portfolio-item"
+          style="cursor: default; flex-direction: column; gap: 0"
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 24px;
+              width: 100%;
+            "
+          >
+            <div class="portfolio-type-badge">📄</div>
+            <div class="portfolio-info">
+              <div class="portfolio-meta">Notion + PDF Interativo</div>
+              <div class="portfolio-title">
+                Materiais Internos — Equipe de Suporte
+              </div>
+              <div class="portfolio-desc">
+                Scripts de atendimento, apostila interativa em PDF, base
+                de conhecimento interna no Notion e fluxos de suporte diário —
+                criados para padronizar o atendimento da equipe e reduzir tempo
+                de resposta.
+              </div>
+              <div class="portfolio-tags">
+                <span class="tag">Notion</span>
+                <span class="tag">PDF</span>
+                <span class="tag">Scripts de atendimento</span>
+                <span class="tag">Uso interno</span>
+              </div>
+              <div class="pdf-previews">
+                <button
+                  class="btn-pdf"
+                  onclick="
+                    openPdf(
+                      'apostila_PROJOIAS.pdf',
+                      'Apostila Projoias',
+                      '105 páginas · Material de onboarding',
+                    )
+                  "
+                >
+                  📑 Apostila de Onboarding
+                </button>
+                <button
+                  class="btn-pdf"
+                  onclick="
+                    openPdf(
+                      '9360ddf0-0924-4c45-9d8e-85c81ea19353_Leads.pdf',
+                      'Manual de Leads',
+                      'Scripts de atendimento · Uso interno',
+                    )
+                  "
+                >
+                  📑 Manual de Leads
+                </button>
+                <button
+                  class="btn-pdf"
+                  onclick="
+                    openPdf(
+                      'c3a41e9c-1c46-4f59-8cef-ce437b724b88_Suporte_dirio.pdf',
+                      'Suporte Diário',
+                      'Scripts e respostas frequentes',
+                    )
+                  "
+                >
+                  📑 Suporte Diário
+                </button>
+                                <button
+                  class="btn-pdf"
+                  onclick="
+                    openPdf(
+                      'da97c1ea-75ab-4883-a8a8-aa7e5530ac9c_Melhorias.pdf',
+                      'Registro de Melhorias',
+                      '127 páginas · Documentação interna',
+                    )
+                  "
+                >
+                  📑 Registro de Melhorias
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- DIFFERENTIALS -->
+    <section id="diferenciais">
+      <div class="reveal">
+        <div class="section-label">Por que faz diferença</div>
+        <h2 class="section-title">
+          Documentação feita por<br />quem viveu o suporte
+        </h2>
+        <p class="section-desc">
+          A maioria dos materiais falha porque quem escreve nunca atendeu um
+          cliente. Eu vivo. Eu venho de dentro.
+        </p>
+      </div>
+
+      <div class="diff-list reveal">
+        <div class="diff-item">
+          <div class="diff-num">I</div>
+          <div class="diff-content">
+            <div class="diff-title">
+              Identifico as dúvidas que realmente travam o suporte
+            </div>
+            <div class="diff-text">
+              Os atendimentos me ensinaram o que precisa ser documentado, em que ordem, e com qual
+              nível de detalhe. Não deduzo. Encontro padrões e descubro onde os
+              clientes travam.
+            </div>
+          </div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-num">II</div>
+          <div class="diff-content">
+            <div class="diff-title">
+              Trabalho de ponta a ponta
+            </div>
+            <div class="diff-text">
+              Roteiro, narração, gravação de tela, edição, publicação,
+              estruturação no GitBook, organização no Notion. Você me passa o
+              acesso ao sistema e recebe o material pronto. Sem precisar
+              coordenar vídeomaker, redator e designer separados.
+            </div>
+          </div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-num">III</div>
+          <div class="diff-content">
+            <div class="diff-title">Adapto o discurso para quem vai usar</div>
+            <div class="diff-text">
+              Escrevo diferente para o cliente final, para o novo colaborador e
+              para a equipe de suporte. A mesma informação precisa de abordagens
+              distintas, considerando perfis diversos de usuário.
+            </div>
+          </div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-num">IV</div>
+          <div class="diff-content">
+            <div class="diff-title">
+              Entrego o que é mantível, não o que é extraordinário
+            </div>
+            <div class="diff-text">
+              Material de documentação só tem valor se a empresa consegue
+              atualizar depois. Trabalho com ferramentas acessíveis (GitBook,
+              Notion, YouTube)
+            </div>
+          </div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-num">V</div>
+          <div class="diff-content">
+            <div class="diff-title">
+              Trabalho 100% remoto, entrego por projeto
+            </div>
+            <div class="diff-text">
+              Sem vínculo, sem mensalidade obrigatória. Ideal
+              para empresas que precisam estruturar documentação mas não querem
+              contratar alguém fixo para isso.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CONTACT -->
+    <section id="contato">
+      <div class="contact-block reveal">
+        <h2>
+          Sua equipe está com L.E.R<br />pelos esforços diários?
+        </h2>
+        <p>
+          Não dou atestado, mas trato com documentação e organização. Me conte o que você precisa — vejo se faz sentido e
+          apresento uma proposta com escopo e valor claros.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:jademfcoelho@gmail.com" class="contact-link"
+            >E-mail</a
+          >
+          <a
+            href="https://wa.me/5521975811821"
+            class="contact-link primary"
+            target="_blank"
+            rel="noopener"
+            >WhatsApp</a
+          >
+          <a
+            href="https://www.linkedin.com/in/jademattoscoelho"
+            class="contact-link"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span
+        >Documentação Técnica &amp; Base de Conhecimento · Remoto · Brasil</span
+      >
+      <span style="color: var(--accent)">Disponível para novos projetos</span>
+    </footer>
+
+    <!-- PDF MODAL -->
+    <div
+      class="pdf-modal-overlay"
+      id="pdfModalOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Preview do PDF"
+    >
+      <div class="pdf-modal">
+        <div class="pdf-modal-header">
+          <div>
+            <div class="pdf-modal-title" id="pdfModalTitle">Carregando...</div>
+            <div class="pdf-modal-meta" id="pdfModalMeta"></div>
+          </div>
+          <div class="pdf-modal-actions">
+            <button
+              class="btn-modal-close"
+              onclick="closePdf()"
+              aria-label="Fechar"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+        <div class="pdf-modal-loading" id="pdfLoading">
+          <div class="pdf-spinner"></div>
+          <span>Carregando PDF…</span>
+        </div>
+        <iframe
+          class="pdf-modal-iframe"
+          id="pdfIframe"
+          style="display: none"
+          title="Preview do PDF"
+          onload="onIframeLoad()"
+        ></iframe>
+      </div>
+    </div>
+
+    <script>
+      // Scroll reveal
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+      );
+
+      reveals.forEach((el) => observer.observe(el));
+
+      // Stagger children of grids
+      document
+        .querySelectorAll(
+          ".services-grid .service-card, .portfolio-grid .portfolio-item, .diff-list .diff-item",
+        )
+        .forEach((el, i) => {
+          el.style.transitionDelay = i * 0.06 + "s";
+        });
+
+      // PDF Modal
+      function openPdf(filename, title, meta) {
+        const overlay = document.getElementById("pdfModalOverlay");
+        const iframe = document.getElementById("pdfIframe");
+        const loading = document.getElementById("pdfLoading");
+        document.getElementById("pdfModalTitle").textContent = title;
+        document.getElementById("pdfModalMeta").textContent = meta;
+        iframe.style.display = "none";
+        loading.style.display = "flex";
+        overlay.classList.add("open");
+        document.body.style.overflow = "hidden";
+        iframe.src = filename;
+      }
+
+      function onIframeLoad() {
+        document.getElementById("pdfLoading").style.display = "none";
+        document.getElementById("pdfIframe").style.display = "block";
+      }
+
+      function closePdf() {
+        const overlay = document.getElementById("pdfModalOverlay");
+        const iframe = document.getElementById("pdfIframe");
+        overlay.classList.remove("open");
+        document.body.style.overflow = "";
+        iframe.src = "";
+      }
+
+      // Close on backdrop click
+      document
+        .getElementById("pdfModalOverlay")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closePdf();
+        });
+
+      // Close on Escape
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closePdf();
+      });
+    </script>
+  </body>
+</html>
