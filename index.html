@@ -298,6 +298,7 @@
         font-size: 14px;
         color: var(--muted);
         line-height: 1.65;
+        text-align: justify;
       }
 
       /* PORTFOLIO */
@@ -327,10 +328,10 @@
         background: var(--bg3);
       }
 
-      .portfolio-item:hover .portfolio-arrow {
+      /* .portfolio-item:hover .portfolio-arrow {
         opacity: 1;
         transform: translateX(0);
-      }
+      } */
 
       .portfolio-type-badge {
         flex-shrink: 0;
@@ -371,6 +372,7 @@
         font-size: 14px;
         color: var(--muted);
         line-height: 1.55;
+        text-align: justify;
       }
 
       .portfolio-tags {
@@ -396,11 +398,7 @@
         color: var(--accent);
         font-size: 18px;
         margin-top: 12px;
-        opacity: 0;
         transform: translateX(-4px);
-        transition:
-          opacity 0.2s,
-          transform 0.2s;
       }
 
       /* DIFFERENTIALS */
@@ -449,6 +447,7 @@
         font-size: 14px;
         color: var(--muted);
         line-height: 1.65;
+        text-align: justify;
       }
 
       /* CONTACT */
@@ -579,9 +578,6 @@
         }
         .hero {
           padding-top: 100px;
-        }
-        .hero-stats {
-          gap: 28px;
         }
         .contact-block {
           padding: 36px 24px;
@@ -777,15 +773,16 @@
     <!-- HERO -->
     <div class="hero">
       <div class="hero-eyebrow">
-        Documentação Técnica &amp; Base de Conhecimento</div>
+        Documentação Técnica &amp; Base de Conhecimento
+      </div>
       <h1>
-        Seu suporte<br />deixa de <em>apagar<br />incêndio.</em>
+        Seu suporte<br />deixa de <em>apagar<br />incêndio</em> 🚒
       </h1>
       <p class="hero-sub">
         Transformo conhecimento em
-        <strong>documentação que trabalha por você e sua equipe</strong> — base de ajuda,
-        vídeos tutoriais e materiais de onboarding que controlam o volume de suporte
-        e capacitam clientes com autonomia.
+        <strong>documentação que trabalha por você e sua equipe</strong> — base
+        de ajuda, vídeos tutoriais e materiais de onboarding que controlam o
+        volume de suporte e capacitam clientes com autonomia.
       </p>
       <div class="hero-actions">
         <a href="#contato" class="btn-primary">Falar sobre →</a>
@@ -812,7 +809,7 @@
           <div class="service-icon">📚</div>
           <div class="service-name">Base de Conhecimento</div>
           <div class="service-desc">
-            Estruturo sua central de ajuda — organizada por fluxo de uso,
+            Estruturo sua central de ajuda, organizada por fluxo de uso,
             pesquisável e fácil de atualizar.
           </div>
         </div>
@@ -821,7 +818,7 @@
           <div class="service-name">Vídeos Tutoriais</div>
           <div class="service-desc">
             Do roteiro à publicação. Gravo, narro e edito tutoriais do seu
-            sistema que funcionam como suporte assíncrono 24h — sem precisar
+            sistema que funcionam como suporte assíncrono 24h, sem precisar
             repetir explicações.
           </div>
         </div>
@@ -829,8 +826,9 @@
           <div class="service-icon">🗂️</div>
           <div class="service-name">Material de Onboarding</div>
           <div class="service-desc">
-            Apostilas interativas, guias e materiais de
-            treinamento para que novos clientes e colaboradores se localizem desde o primeiro contato.
+            Apostilas interativas, guias e materiais de treinamento para que
+            novos clientes e colaboradores se localizem desde o primeiro
+            contato.
           </div>
         </div>
         <div class="service-card">
@@ -838,7 +836,8 @@
           <div class="service-name">Processos Internos</div>
           <div class="service-desc">
             Mapeio e documento processos de atendimento, scripts de suporte e
-            fluxos operacionais para que o conhecimento não fique só no imaginário.
+            fluxos operacionais para que o conhecimento não fique só no
+            imaginário.
           </div>
         </div>
       </div>
@@ -852,7 +851,9 @@
         <div class="section-label">Portfólio</div>
         <h2 class="section-title">Evidências reais,<br />não promessas</h2>
         <p class="section-desc">
-          Todo material abaixo está em produção ativa — construído do zero para uma empresa de software de gestão com mais de 500 clientes.
+          Todo material abaixo está em produção ativa e foi construído do zero
+          para a Innosystem — uma empresa de software de gestão com mais de 500
+          clientes.
         </p>
       </div>
 
@@ -866,7 +867,7 @@
           <div class="portfolio-type-badge">📖</div>
           <div class="portfolio-info">
             <div class="portfolio-meta">Base de Conhecimento · GitBook</div>
-            <div class="portfolio-title">Central de Ajuda — Innosystem</div>
+            <div class="portfolio-title">Central de Ajuda</div>
             <div class="portfolio-desc">
               Base de conhecimento completa cobrindo todos os módulos do
               sistema. Usada diariamente por clientes e equipe de suporte.
@@ -890,10 +891,10 @@
           <div class="portfolio-type-badge">🎬</div>
           <div class="portfolio-info">
             <div class="portfolio-meta">Canal YouTube · +100 vídeos</div>
-            <div class="portfolio-title">Vídeos Tutoriais — Innosystem</div>
+            <div class="portfolio-title">Vídeos Tutoriais</div>
             <div class="portfolio-desc">
-              Canal com tutoriais do sistema produzidos do zero:
-              roteiro, narração, gravação de tela e edição.
+              Canal com tutoriais do sistema produzidos do zero: roteiro,
+              narração, gravação de tela e edição.
             </div>
             <div class="portfolio-tags">
               <span class="tag">Roteiro</span>
@@ -914,12 +915,10 @@
           <div class="portfolio-type-badge">▶️</div>
           <div class="portfolio-info">
             <div class="portfolio-meta">Playlist Destaque · Tour Completo</div>
-            <div class="portfolio-title">
-              Tour pelo Sistema — módulo a módulo
-            </div>
+            <div class="portfolio-title">Tour pelo Sistema</div>
             <div class="portfolio-desc">
               Série estruturada que apresenta cada área do sistema em sequência
-              lógica — pensada para onboarding de novos clientes sem necessidade
+              lógica, pensada para onboarding de novos clientes sem necessidade
               de treinamento ao vivo.
             </div>
             <div class="portfolio-tags">
@@ -939,14 +938,14 @@
         >
           <div class="portfolio-type-badge">❓</div>
           <div class="portfolio-info">
-            <div class="portfolio-meta">Playlist Destaque · Dúvidas Frequentes</div>
-            <div class="portfolio-title">
-              FAQ em Vídeo — dúvidas exaustivas
+            <div class="portfolio-meta">
+              Playlist Destaque · Dúvidas Frequentes
             </div>
+            <div class="portfolio-title">FAQ em Vídeo</div>
             <div class="portfolio-desc">
               Playlist com as dúvidas que mais aparecem no atendimento diário.
-              Cada vídeo responde uma pergunta específica de forma direta —
-              clientes descobrem e resolvem sozinhos.
+              Cada vídeo responde uma pergunta específica de forma direta.
+              Clientes encontram e resolvem sozinhos.
             </div>
             <div class="portfolio-tags">
               <span class="tag">Redução de chamados</span>
@@ -972,12 +971,10 @@
             <div class="portfolio-type-badge">📄</div>
             <div class="portfolio-info">
               <div class="portfolio-meta">Notion + PDF Interativo</div>
-              <div class="portfolio-title">
-                Materiais Internos — Equipe de Suporte
-              </div>
+              <div class="portfolio-title">Materiais Internos</div>
               <div class="portfolio-desc">
-                Scripts de atendimento, apostila interativa em PDF, base
-                de conhecimento interna no Notion e fluxos de suporte diário —
+                Scripts de atendimento, apostila interativa em PDF, base de
+                conhecimento interna no Notion e fluxos de suporte diário,
                 criados para padronizar o atendimento da equipe e reduzir tempo
                 de resposta.
               </div>
@@ -1003,10 +1000,7 @@
                 <button
                   class="btn-pdf"
                   onclick="
-                    openPdf(
-                      'leads.pdf',
-                      'Scripts de atendimento · Uso interno',
-                    )
+                    openPdf('leads.pdf', 'Scripts de atendimento · Uso interno')
                   "
                 >
                   📑 Manual de Leads
@@ -1014,15 +1008,12 @@
                 <button
                   class="btn-pdf"
                   onclick="
-                    openPdf(
-                      'suporte.pdf',
-                      'Scripts e respostas frequentes',
-                    )
+                    openPdf('suporte.pdf', 'Scripts e respostas frequentes')
                   "
                 >
                   📑 Suporte Diário
                 </button>
-                                <button
+                <button
                   class="btn-pdf"
                   onclick="
                     openPdf(
@@ -1050,10 +1041,6 @@
         <h2 class="section-title">
           Documentação feita por<br />quem viveu o suporte
         </h2>
-        <p class="section-desc">
-          A maioria dos materiais falha porque quem escreve nunca atendeu um
-          cliente. Eu vivo. Eu venho de dentro.
-        </p>
       </div>
 
       <div class="diff-list reveal">
@@ -1064,18 +1051,16 @@
               Identifico as dúvidas que realmente travam o suporte
             </div>
             <div class="diff-text">
-              Os atendimentos me ensinaram o que precisa ser documentado, em que ordem, e com qual
-              nível de detalhe. Não deduzo. Encontro padrões e descubro onde os
-              clientes travam.
+              Os atendimentos me ensinaram o que precisa ser documentado, em que
+              ordem, e com qual nível de detalhe. Não deduzo. Encontro padrões e
+              descubro onde os clientes travam.
             </div>
           </div>
         </div>
         <div class="diff-item">
           <div class="diff-num">II</div>
           <div class="diff-content">
-            <div class="diff-title">
-              Trabalho de ponta a ponta
-            </div>
+            <div class="diff-title">Trabalho de ponta a ponta</div>
             <div class="diff-text">
               Roteiro, narração, gravação de tela, edição, publicação,
               estruturação no GitBook, organização no Notion. Você me passa o
@@ -1099,12 +1084,12 @@
           <div class="diff-num">IV</div>
           <div class="diff-content">
             <div class="diff-title">
-              Entrego o que é mantível, não o que é extraordinário
+              Entrego o que é sustentável, não o que é extraordinário
             </div>
             <div class="diff-text">
               Material de documentação só tem valor se a empresa consegue
               atualizar depois. Trabalho com ferramentas acessíveis (GitBook,
-              Notion, YouTube)
+              Notion, YouTube).
             </div>
           </div>
         </div>
@@ -1115,9 +1100,9 @@
               Trabalho 100% remoto, entrego por projeto
             </div>
             <div class="diff-text">
-              Sem vínculo, sem mensalidade obrigatória. Ideal
-              para empresas que precisam estruturar documentação mas não querem
-              contratar alguém fixo para isso.
+              Sem vínculo, sem mensalidade obrigatória. Ideal para empresas que
+              precisam estruturar documentação mas não querem contratar alguém
+              fixo para isso.
             </div>
           </div>
         </div>
@@ -1129,12 +1114,11 @@
     <!-- CONTACT -->
     <section id="contato">
       <div class="contact-block reveal">
-        <h2>
-          Sua equipe está com L.E.R<br />pelos esforços diários?
-        </h2>
+        <h2>Sua equipe já está com L.E.R<br />pelos esforços diários?</h2>
         <p>
-          Não dou atestado, mas trato com documentação e organização. Me conte o que você precisa — vejo se faz sentido e
-          apresento uma proposta com escopo e valor claros.
+          Não dou atestado, mas trato com documentação e organização. Me conte o
+          que você precisa. Vejo se faz sentido e apresento uma proposta com
+          escopo e valor claros.
         </p>
         <div class="contact-links">
           <a href="mailto:jademfcoelho@gmail.com" class="contact-link"
