@@ -401,6 +401,88 @@
         transform: translateX(-4px);
       }
 
+      /* ALSO DO */
+      .also-section {
+        padding: 60px 40px 100px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .also-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .also-label::before {
+        content: "✦";
+        color: var(--accent);
+        font-size: 12px;
+      }
+
+      .also-title {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        letter-spacing: -0.01em;
+      }
+
+      .also-desc {
+        font-size: 14px;
+        color: var(--muted);
+        max-width: 540px;
+        line-height: 1.65;
+        margin-bottom: 28px;
+      }
+
+      .also-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+      }
+
+      .also-card {
+        background: var(--bg2);
+        border: 1px dashed var(--border);
+        border-radius: 10px;
+        padding: 18px 20px;
+      }
+
+      .also-card-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .also-card-desc {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .also-note {
+        margin-top: 20px;
+        font-size: 12.5px;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        background: var(--accent-dim2);
+        border-radius: 8px;
+        width: fit-content;
+      }
+
       /* DIFFERENTIALS */
       .diff-list {
         display: flex;
@@ -781,8 +863,8 @@
       <p class="hero-sub">
         Transformo conhecimento em
         <strong>documentação que trabalha por você e sua equipe</strong> — base
-        de ajuda, vídeos tutoriais e materiais que controlam o
-        volume de suporte e capacitam clientes com autonomia.
+        de ajuda, vídeos tutoriais e materiais que controlam o volume de suporte
+        e capacitam clientes com autonomia.
       </p>
       <div class="hero-actions">
         <a href="#contato" class="btn-primary">Falar sobre →</a>
@@ -825,9 +907,8 @@
           <div class="service-icon">🗂️</div>
           <div class="service-name">Material de Onboarding</div>
           <div class="service-desc">
-            Apostilas e guias interativos, para que
-            novos clientes e colaboradores se localizem desde o primeiro
-            contato.
+            Apostilas e guias interativos, para que novos clientes e
+            colaboradores se localizem desde o primeiro contato.
           </div>
         </div>
         <div class="service-card">
@@ -851,8 +932,7 @@
         <h2 class="section-title">Evidências reais,<br />não promessas</h2>
         <p class="section-desc">
           Todo material abaixo está em produção ativa e foi construído do zero
-          para uma empresa de software de gestão com mais de 500
-          clientes.
+          para uma empresa de software de gestão com mais de 500 clientes.
         </p>
       </div>
 
@@ -895,13 +975,13 @@
               Canal com tutoriais do sistema produzidos do roteiro a edição.
               Playlists em Destaque:
               <p>
-                <b>Trilha do Sistema</b>: Série estruturada que apresenta cada área
-                do sistema em sequência lógica, pensada para onboarding de novos
-                clientes.
+                <b>Trilha do Sistema</b>: Série estruturada que apresenta cada
+                área do sistema em sequência lógica, pensada para onboarding de
+                novos clientes.
               </p>
               <p>
-                <b>Dúvidas Frequentes</b>: Questões que mais aparecem
-                no atendimento diário. Cada vídeo responde de forma direta.
+                <b>Dúvidas Frequentes</b>: Questões que mais aparecem no
+                atendimento diário. Cada vídeo responde de forma direta.
                 Clientes encontram e resolvem.
               </p>
             </div>
@@ -996,6 +1076,35 @@
       </div>
     </section>
 
+    <!-- ALSO DO -->
+    <div class="also-section reveal">
+      <div class="also-label">Também faço</div>
+      <div class="also-title">Ações de marketing e identidade visual</div>
+      <p class="also-desc">
+        Tenho experiência com criação de identidade da empresa e landing pages.
+        Não atuo com marketing contínuo (gestão de redes sociais, posts para
+        Instagram), mas estou aberta a conversar sobre.
+      </p>
+      <div class="also-grid">
+        <div class="also-card">
+          <div class="also-card-title">🎨 Identidade Visual</div>
+          <div class="also-card-desc">
+            Logo, paleta de cores e elementos visuais para marcas.
+          </div>
+        </div>
+        <div class="also-card">
+          <div class="also-card-title">🖥️ Landing Pages</div>
+          <div class="also-card-desc">
+            Páginas únicas para apresentar serviço, produto ou
+            projeto.
+          </div>
+        </div>
+      </div>
+      <div class="also-note">
+        Sob consulta
+      </div>
+    </div>
+
     <div class="divider"></div>
 
     <!-- DIFFERENTIALS -->
@@ -1080,9 +1189,9 @@
       <div class="contact-block reveal">
         <h2>Sua equipe já está com L.E.R<br />pelos esforços diários?</h2>
         <p>
-          Não dou atestado, mas trato com organização. Me conte o
-          que você precisa. Vejo se faz sentido e apresento uma proposta com
-          escopo e valor claros.
+          Não dou atestado, mas trato com organização. Me conte o que você
+          precisa. Vejo se faz sentido e apresento uma proposta com escopo e
+          valor claros.
         </p>
         <div class="contact-links">
           <a href="mailto:jademfcoelho@gmail.com" class="contact-link"
